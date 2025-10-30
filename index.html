@@ -3,51 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glossário Interativo de Termos Técnicos</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Glossário de Termos Técnicos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #search {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .group {
+            margin-bottom: 40px;
+        }
+        .group h2 {
+            text-align: center;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+        .glossary {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .term-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.2s;
+        }
+        .term-card:hover {
+            transform: translateY(-5px);
+        }
+        .term {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: #3498db;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .definition {
+            margin-bottom: 10px;
+            display: none;
+        }
+        .synonyms {
+            font-style: italic;
+            color: #7f8c8d;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Glossário Interativo de Termos Técnicos</h1>
+    <h1>Glossário de Termos Técnicos</h1>
     <div class="search-container">
         <input type="text" id="search" placeholder="Buscar termo...">
     </div>
-    <div class="glossary" id="glossary">
-        <div class="term-card">
-            <div class="term">JavaScript</div>
-            <div class="definition">Linguagem de programação usada principalmente no desenvolvimento web para criar interatividade em páginas.</div>
-            <div class="synonyms">Sinônimos: JS, ECMAScript, linguagem de script</div>
+
+    <div class="group">
+        <h2>Grupo 1</h2>
+        <div class="glossary" id="glossary1">
+            <div class="term-card">
+                <div class="term">JavaScript</div>
+                <div class="definition">Linguagem interpretada, dinâmica e orientada a eventos, executada no navegador ou em ambientes como Node.js.</div>
+                <div class="synonyms">Sinônimos: Script, JS, ECMA-262</div>
+            </div>
+            <div class="term-card">
+                <div class="term">implementação</div>
+                <div class="definition">Tradução de um algoritmo ou especificação em código executável.</div>
+                <div class="synonyms">Sinônimos: codificação, realização, deployment</div>
+            </div>
+            <div class="term-card">
+                <div class="term">desenvolvendo</div>
+                <div class="definition">Fase ativa de escrita, teste e refinamento de código-fonte.</div>
+                <div class="synonyms">Sinônimos: codificando, construindo, prototipando</div>
+            </div>
+            <div class="term-card">
+                <div class="term">Undefined</div>
+                <div class="definition">Tipo primitivo que representa ausência de valor atribuído; resultado de variável declarada sem inicialização.</div>
+                <div class="synonyms">Sinônimos: nulo (errado), vazio, não inicializado</div>
+            </div>
+            <div class="term-card">
+                <div class="term">contador</div>
+                <div class="definition">Variável inteira usada para controlar iterações em estruturas de repetição (for, while).</div>
+                <div class="synonyms">Sinônimos: iterador, acumulador, registrador</div>
+            </div>
         </div>
-        <div class="term-card">
-            <div class="term">implementação</div>
-            <div class="definition">Processo de colocar em prática ou desenvolver uma solução, algoritmo ou funcionalidade.</div>
-            <div class="synonyms">Sinônimos: execução, aplicação, desenvolvimento</div>
+    </div>
+
+    <div class="group">
+        <h2>Grupo 2</h2>
+        <div class="glossary" id="glossary2">
+            <div class="term-card">
+                <div class="term">estacionado</div>
+                <div class="definition">Estado de um processo ou thread suspenso, aguardando liberação ou evento.</div>
+                <div class="synonyms">Sinônimos: pausado, bloqueado, em espera</div>
+            </div>
+            <div class="term-card">
+                <div class="term">parâmetro</div>
+                <div class="definition">Variável formal declarada na definição de uma função, recebendo argumentos na chamada.</div>
+                <div class="synonyms">Sinônimos: formal, entrada, placeholder</div>
+            </div>
+            <div class="term-card">
+                <div class="term">retorna</div>
+                <div class="definition">Instrução return que encerra a função e devolve um valor ao chamador.</div>
+                <div class="synonyms">Sinônimos: yield, entrega, resulta em</div>
+            </div>
+            <div class="term-card">
+                <div class="term">calculado</div>
+                <div class="definition">Valor gerado em tempo de execução por meio de operações aritméticas ou lógicas.</div>
+                <div class="synonyms">Sinônimos: derivado, processado, computado</div>
+            </div>
+            <div class="term-card">
+                <div class="term">cobrado</div>
+                <div class="definition">Valor monetário aplicado automaticamente em transações ou uso de serviços (ex: API).</div>
+                <div class="synonyms">Sinônimos: tarifado, debitado, faturado</div>
+            </div>
         </div>
-        <div class="term-card">
-            <div class="term">desenvolvendo</div>
-            <div class="definition">Ato de criar, construir ou aprimorar um software, sistema ou funcionalidade.</div>
-            <div class="synonyms">Sinônimos: criando, programando, construindo</div>
-        </div>
-        <div class="term-card">
-            <div class="term">Undefined</div>
-            <div class="definition">Valor especial em JavaScript que indica que uma variável foi declarada, mas ainda não recebeu valor.</div>
-            <div class="synonyms">Sinônimos: indefinido, não definido, sem valor</div>
-        </div>
-        <div class="term-card">
-            <div class="term">contador</div>
-            <div class="definition">Variável usada para contar ocorrências, iterações ou controlar loops.</div>
-            <div class="synonyms">Sinônimos: acumulador, índice, marcador</div>
+    </div>
+
+    <div class="group">
+        <h2>Grupo 3</h2>
+        <div class="glossary" id="glossary3">
+            <div class="term-card">
+                <div class="term">addEventListener</div>
+                <div class="definition">Método do DOM que associa uma função callback a um evento específico em um elemento.</div>
+                <div class="synonyms">Sinônimos: bind, on, registrarListener</div>
+            </div>
+            <div class="term-card">
+                <div class="term">necessárias</div>
+                <div class="definition">Dependências ou condições obrigatórias para execução correta de um bloco de código.</div>
+                <div class="synonyms">Sinônimos: requeridas, mandatórias, indispensáveis</div>
+            </div>
+            <div class="term-card">
+                <div class="term">atualização</div>
+                <div class="definition">Processo de substituição ou modificação de dados, código ou interface para nova versão.</div>
+                <div class="synonyms">Sinônimos: refresh, upgrade, patch</div>
+            </div>
+            <div class="term-card">
+                <div class="term">função</div>
+                <div class="definition">Bloco de código nomeado, reutilizável, que aceita entradas e opcionalmente retorna saída.</div>
+                <div class="synonyms">Sinônimos: sub-rotina, procedimento, handler</div>
+            </div>
+            <div class="term-card">
+                <div class="term">diretamente</div>
+                <div class="definition">Acesso ou manipulação sem abstrações, intermediários ou camadas adicionais.</div>
+                <div class="synonyms">Sinônimos: nativamente, inline, sem proxy</div>
+            </div>
         </div>
     </div>
 
     <script>
         const searchInput = document.getElementById('search');
-        const glossary = document.getElementById('glossary');
-        const terms = glossary.querySelectorAll('.term-card');
+        const allTerms = document.querySelectorAll('.term-card');
 
         // Funcionalidade de busca
         searchInput.addEventListener('input', function() {
             const query = this.value.toLowerCase();
-            terms.forEach(card => {
+            allTerms.forEach(card => {
                 const term = card.querySelector('.term').textContent.toLowerCase();
                 const definition = card.querySelector('.definition').textContent.toLowerCase();
                 const synonyms = card.querySelector('.synonyms').textContent.toLowerCase();
@@ -60,7 +190,7 @@
         });
 
         // Funcionalidade interativa: expandir/colapsar ao clicar no termo
-        terms.forEach(card => {
+        allTerms.forEach(card => {
             const term = card.querySelector('.term');
             const definition = card.querySelector('.definition');
             const synonyms = card.querySelector('.synonyms');
