@@ -1,0 +1,65 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#search {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.glossary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.term-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.2s;
+}
+
+.term-card:hover {
+    transform: translateY(-5px);
+}
+
+.term {
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #3498db;
+    margin-bottom: 10px;
+    cursor: pointer; /* Torna clicável */
+}
+
+.definition {
+    margin-bottom: 10px;
+    display: none; /* Oculto inicialmente */
+}
+
+.synonyms {
+    font-style: italic;
+    color: #7f8c8d;
+    display: none; /* Oculto inicialmente */
+}

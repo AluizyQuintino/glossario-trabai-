@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossário Interativo de Termos Técnicos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Glossário Interativo de Termos Técnicos</h1>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Buscar termo...">
+    </div>
+    <div class="glossary" id="glossary">
+        <div class="term-card">
+            <div class="term">JavaScript</div>
+            <div class="definition">Linguagem de programação usada principalmente no desenvolvimento web para criar interatividade em páginas.</div>
+            <div class="synonyms">Sinônimos: JS, ECMAScript, linguagem de script</div>
+        </div>
+        <div class="term-card">
+            <div class="term">implementação</div>
+            <div class="definition">Processo de colocar em prática ou desenvolver uma solução, algoritmo ou funcionalidade.</div>
+            <div class="synonyms">Sinônimos: execução, aplicação, desenvolvimento</div>
+        </div>
+        <div class="term-card">
+            <div class="term">desenvolvendo</div>
+            <div class="definition">Ato de criar, construir ou aprimorar um software, sistema ou funcionalidade.</div>
+            <div class="synonyms">Sinônimos: criando, programando, construindo</div>
+        </div>
+        <div class="term-card">
+            <div class="term">Undefined</div>
+            <div class="definition">Valor especial em JavaScript que indica que uma variável foi declarada, mas ainda não recebeu valor.</div>
+            <div class="synonyms">Sinônimos: indefinido, não definido, sem valor</div>
+        </div>
+        <div class="term-card">
+            <div class="term">contador</div>
+            <div class="definition">Variável usada para contar ocorrências, iterações ou controlar loops.</div>
+            <div class="synonyms">Sinônimos: acumulador, índice, marcador</div>
+        </div>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const glossary = document.getElementById('glossary');
+        const terms = glossary.querySelectorAll('.term-card');
+
+        // Funcionalidade de busca
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            terms.forEach(card => {
+                const term = card.querySelector('.term').textContent.toLowerCase();
+                const definition = card.querySelector('.definition').textContent.toLowerCase();
+                const synonyms = card.querySelector('.synonyms').textContent.toLowerCase();
+                if (term.includes(query) || definition.includes(query) || synonyms.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Funcionalidade interativa: expandir/colapsar ao clicar no termo
+        terms.forEach(card => {
+            const term = card.querySelector('.term');
+            const definition = card.querySelector('.definition');
+            const synonyms = card.querySelector('.synonyms');
+
+            term.addEventListener('click', function() {
+                if (definition.style.display === 'none' || definition.style.display === '') {
+                    definition.style.display = 'block';
+                    synonyms.style.display = 'block';
+                } else {
+                    definition.style.display = 'none';
+                    synonyms.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
